@@ -1,0 +1,12 @@
+swagger2api generateApi poc-gmf-ma -s
+http://localhost:8080/ritwik-prac/APIs/Gmf-PoC/design/api-specs/gmf-ma/gmf-ma-apistudio.yaml -d C:\Ritwik-All\Ritwik-Practice\APIs\Gmf-PoC\build\api-proxy\apigee\swagger2api\api-bundle -D
+API name: GMF MyAccount PoC APIs, Version: v1
+Apigee API bundle generated in location ./swagger2api
+Initiating Apigee Deployment..
+? Base URI? https://api.enterprise.apigee.com
+? Organization? amer-partner9
+? User Id? ritwik_chatterjee@dell.com
+? Password? ********
+? Environment? test
+? Virtual Hosts? default,secure
+Deployment to Apigee successfully completed.
