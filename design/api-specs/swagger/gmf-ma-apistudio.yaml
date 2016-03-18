@@ -2,8 +2,8 @@ swagger: '2.0'
 info:
   version: 0.0.1
   title: Swagger API
-host: playground.apistudio.io #TODO Replace with actual
-basePath: /try/b60298f1-d8f3-478f-a2db-d08f23f99494 #TODO Replace with actual
+host: amer-partner9-test.apigee.net
+basePath: /poc-gmf-ma/v1
 schemes:
   - http
   - https
@@ -36,7 +36,7 @@ paths:
         '200':
           description: Response for resource retrieved
           schema:
-            $ref: '#/definitions/customer-response' #TODO replace with file reference
+            $ref: '#/definitions/customer-response'
           examples:
             data:
               - customer-id: '12345'
@@ -73,62 +73,4 @@ definitions:
       data:
         type: array
         items:
-          $ref: '#/definitions/gmf-customer'
-  gmf-customer:
-    type: object
-    properties:
-      customer-id:
-        description: The Customer Id
-        type: string
-      first-name:
-        type: string
-      last-name:
-        type: string
-      dob:
-        description: The customer date of birth
-        type: string
-        format: date
-      address:
-        type: object
-        properties:
-          address1:
-            type: string
-          address2:
-            type: string
-          city:
-            type: string
-          state:
-            type: string
-          zip:
-            type: integer
-      loans:
-        description: The loans associated with this account
-        type: array
-        items:
-          type: object
-          properties:
-            loan-ac-num:
-              description: Loan a/c number
-              type: string
-            car-make:
-              type: string
-            car-model:
-              type: string
-            car-image:
-              description: Link to the car image file
-              type: string
-            loan-amt-due:
-              description: Amount due as of today
-              type: number
-              format: float
-            loan-due-date:
-              description: Next due date for payment
-              type: string
-              format: date
-    required:
-      - customer-id
-      - first-name
-      - last-name
-      - dob
-      - address
-      - loans
+          $ref: './definitions/gmf-customer.schema'
