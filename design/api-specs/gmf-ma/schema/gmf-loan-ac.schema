@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "loan_ac_num": {
+      "description": "Loan A/c #",
+      "type": "integer"
+    },
+    "car": {
+      "description": "Details of the car",
+      "type": "object",
+      "$ref": "./gmf-car.schema"
+    },
+    "disbursement_amt": {
+      "description": "Full disbursement amount",
+      "type": "number",
+	  "format": "float"
+    },
+    "disbursement_dt": {
+      "description": "Original disbursement date",
+      "type": "string",
+	  "format": "date"
+    },
+    "amount_due": {
+      "description": "Amount due as of today",
+      "type": "number",
+	  "format": "float"
+    },
+    "due_date": {
+      "description": "Next due date",
+      "type": "string",
+	  "format": "date"
+    }
+  },
+  "required": [
+    "loan_ac_num",
+    "car",
+    "disbursement_amt",
+    "disbursement_dt",
+    "amount_due",
+    "due_date"
+  ]
+}

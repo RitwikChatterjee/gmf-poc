@@ -1,0 +1,23 @@
+{
+  "customer-id": "12345",
+  "first-name": "Joe",
+  "last-name": "Sandlin",
+  "dob": "1986-03-17",
+  "address": {
+    "address1": "1234 N 1st Street",
+    "address2": "#2001",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": 85001
+  },
+  "loans": [
+    {
+      "loan-ac-num": "123444",
+      "car-make": "GMC",
+      "car-model": "Sierra",
+      "car-image": "./img/13-GMC-SIE-999-09A.png",
+      "loan-amt-due": 1203.5,
+      "loan-due-date": "2016-04-16"
+    }
+  ]
+}

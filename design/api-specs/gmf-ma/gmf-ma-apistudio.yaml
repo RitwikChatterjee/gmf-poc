@@ -1,0 +1,134 @@
+swagger: '2.0'
+info:
+  version: 0.0.1
+  title: Swagger API
+host: playground.apistudio.io #TODO Replace with actual
+basePath: /try/b60298f1-d8f3-478f-a2db-d08f23f99494 #TODO Replace with actual
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /customers/{customerId}:
+    x-swagger-router-controller: customers #Apigee Tag
+    parameters:
+      - name: apikey
+        in: header
+        description: API Key to call the API
+        required: true
+        type: string
+    get:
+      tags:
+        - customers
+      summary: Get a specific customer by Id
+      description: Get a specific customer by Id
+      operationId: customers #Apigee Tag
+      parameters:
+        - name: customerId
+          in: path
+          description: Unique Id of the customer to fetch
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Response for resource retrieved
+          schema:
+            $ref: '#/definitions/customer-response' #TODO replace with file reference
+          examples:
+            data:
+              - customer-id: '12345'
+                first-name: Joe
+                last-name: Sandlin
+                dob: '1986-03-17'
+                address:
+                  address1: 1234 N 1st Street
+                  address2: '#2001'
+                  city: Phoenix
+                  state: AZ
+                  zip: 85001
+                loans:
+                  - loan-ac-num: '123444'
+                    car-make: GMC
+                    car-model: Sierra
+                    car-image: ./img/13-GMC-SIE-999-09A.png
+                    loan-amt-due: 1203.5
+                    loan-due-date: '2016-04-16'
+        default:
+          description: Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+definitions:
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+  customer-response:
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/gmf-customer'
+  gmf-customer:
+    type: object
+    properties:
+      customer-id:
+        description: The Customer Id
+        type: string
+      first-name:
+        type: string
+      last-name:
+        type: string
+      dob:
+        description: The customer date of birth
+        type: string
+        format: date
+      address:
+        type: object
+        properties:
+          address1:
+            type: string
+          address2:
+            type: string
+          city:
+            type: string
+          state:
+            type: string
+          zip:
+            type: integer
+      loans:
+        description: The loans associated with this account
+        type: array
+        items:
+          type: object
+          properties:
+            loan-ac-num:
+              description: Loan a/c number
+              type: string
+            car-make:
+              type: string
+            car-model:
+              type: string
+            car-image:
+              description: Link to the car image file
+              type: string
+            loan-amt-due:
+              description: Amount due as of today
+              type: number
+              format: float
+            loan-due-date:
+              description: Next due date for payment
+              type: string
+              format: date
+    required:
+      - customer-id
+      - first-name
+      - last-name
+      - dob
+      - address
+      - loans
