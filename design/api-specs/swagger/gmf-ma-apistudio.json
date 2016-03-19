@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "0.0.1",
-        "title": "Swagger API"
+        "version": "v1",
+        "title": "GMF MyAccount PoC APIs"
     },
     "host": "amer-partner9-test.apigee.net",
     "basePath": "/poc-gmf-ma/v1",
