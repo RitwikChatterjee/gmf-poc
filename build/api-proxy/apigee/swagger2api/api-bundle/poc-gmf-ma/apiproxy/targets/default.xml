@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TargetEndpoint name="default">
+  <Description>GMF MyAccount PoC APIs</Description>
+  <PreFlow name="PreFlow">
+    <Request/>
+    <Response/>
+  </PreFlow>
+  <Flows/>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <HTTPTargetConnection>
+    <URL>http://amer-partner9-test.apigee.net/poc-gmf-ma/v1</URL>
+  </HTTPTargetConnection>
+</TargetEndpoint>

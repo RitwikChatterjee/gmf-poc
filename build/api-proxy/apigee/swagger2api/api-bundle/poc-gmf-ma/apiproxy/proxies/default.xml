@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ProxyEndpoint name="default">
+  <Description>GMF MyAccount PoC APIs</Description>
+  <PreFlow name="PreFlow">
+    <Request/>
+    <Response/>
+  </PreFlow>
+  <Flows>
+    <Flow name="customers">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/customers/{customerId}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Get a specific customer by Id</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+  </Flows>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <HTTPProxyConnection>
+    <BasePath>/poc-gmf-ma</BasePath>
+    <VirtualHost>default</VirtualHost>
+    <VirtualHost>secure</VirtualHost>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>
