@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="2" name="poc-gmf-ma">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1458595303442</CreatedAt>
+    <CreatedBy>noreply_admin@apigee.com</CreatedBy>
+    <Description>GMF MyAccount PoC APIs</Description>
+    <DisplayName>poc-gmf-ma</DisplayName>
+    <LastModifiedAt>1458595303442</LastModifiedAt>
+    <LastModifiedBy>noreply_admin@apigee.com</LastModifiedBy>
+    <Policies>
+        <Policy>OA2-Verify-Oauth-Token</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
