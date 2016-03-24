@@ -5,7 +5,11 @@
     <Flows>
         <Flow name="customers">
             <Description>Get a specific customer by Id</Description>
-            <Request/>
+            <Request>
+              <Step>
+                   <Name>EV-Extract-CustomerId</Name>
+               </Step>
+            </Request>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/customers/{customerId}") and (request.verb = "GET")</Condition>
         </Flow>
@@ -28,6 +32,10 @@
         <VirtualHost>default</VirtualHost>
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>
+    <RouteRule name="rte-be-customer-api">
+        <TargetEndpoint>tgt-be-customer-api</TargetEndpoint>
+        <Condition>(proxy.pathsuffix MatchesPath "/customers/{customerId}") and (request.verb = "GET") and (accesstoken.customerId = urirequest.customerId)</Condition>
+    </RouteRule>
     <RouteRule name="default">
         <TargetEndpoint>default</TargetEndpoint>
     </RouteRule>

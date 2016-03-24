@@ -1,0 +1,9 @@
+<ExtractVariables name="EV-Extract-CustomerId">
+   <DisplayName>Extract CustomerId</DisplayName>
+   <Source>request</Source>
+   <URIPath>
+      <Pattern ignoreCase="true">/customers/{customerId}</Pattern>
+   </URIPath>
+   <VariablePrefix>urirequest</VariablePrefix>
+   <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>
