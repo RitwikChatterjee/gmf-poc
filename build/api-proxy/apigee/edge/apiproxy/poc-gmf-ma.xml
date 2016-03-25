@@ -10,6 +10,8 @@
     <Policies>
         <Policy>OA2-Verify-Oauth-Token</Policy>
         <Policy>EV-Extract-CustomerId</Policy>
+        <Policy>RF-CustomerId-does-not-match</Policy>
+        <Policy>RF-Unknown-Resource</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>

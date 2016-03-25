@@ -8,10 +8,23 @@
             <Request>
               <Step>
                    <Name>EV-Extract-CustomerId</Name>
-               </Step>
+              </Step>
+              <Step>
+                   <Name>RF-CustomerId-does-not-match</Name>
+                   <Condition>(accesstoken.customerId != urirequest.customerId)</Condition>
+              </Step>
             </Request>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/customers/{customerId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="UnknownResource">
+            <Description>To handle all unknown resource paths</Description>
+            <Request>
+              <Step>
+                   <Name>RF-Unknown-Resource</Name>
+              </Step>
+            </Request>
+            <Response/>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">

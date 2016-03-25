@@ -1,0 +1,13 @@
+<RaiseFault async="false" continueOnError="false" enabled="true" name="RF-CustomerId-does-not-match">
+    <DisplayName>RF-CustomerId-does-not-match</DisplayName>
+    <Properties/>
+    <FaultResponse>
+    <Set>
+        <Headers/>
+        <Payload contentType="application/json">\{"error":"Token does not belong to the customer", "code":401} </Payload>
+        <StatusCode>401</StatusCode>
+        <ReasonPhrase>Not Authorized</ReasonPhrase>
+    </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>
