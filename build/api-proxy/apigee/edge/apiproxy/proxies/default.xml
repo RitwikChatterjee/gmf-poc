@@ -33,6 +33,9 @@
     </PostFlow>
     <PreFlow name="PreFlow">
         <Request>
+          <Step>
+              <Name>SA-Prevent-Spikes</Name>
+          </Step>
             <Step>
                 <Name>OA2-Verify-Oauth-Token</Name>
             </Step>

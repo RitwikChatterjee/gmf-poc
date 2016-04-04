@@ -1,0 +1,4 @@
+<SpikeArrest async="false" continueOnError="false" enabled="true" name="SA-Prevent-Spikes">
+    <DisplayName>SA Prevent Traffic Spikes</DisplayName>
+    <Rate>12pm</Rate>
+</SpikeArrest>

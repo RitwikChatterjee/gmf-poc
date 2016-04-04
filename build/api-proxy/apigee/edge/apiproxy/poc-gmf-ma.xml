@@ -8,6 +8,7 @@
     <LastModifiedAt>1458595303442</LastModifiedAt>
     <LastModifiedBy>noreply_admin@apigee.com</LastModifiedBy>
     <Policies>
+        <Policy>SA-Prevent-Spikes</Policy>
         <Policy>OA2-Verify-Oauth-Token</Policy>
         <Policy>EV-Extract-CustomerId</Policy>
         <Policy>RF-CustomerId-does-not-match</Policy>
