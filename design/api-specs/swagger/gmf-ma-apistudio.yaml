@@ -15,9 +15,9 @@ paths:
   /customers/{customerId}:
     x-swagger-router-controller: customers #Apigee Tag
     parameters:
-      - name: apikey
+      - name: clientId
         in: header
-        description: API Key to call the API
+        description: Client Id issued to the registered client
         required: true
         type: string
     get:

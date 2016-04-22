@@ -4,11 +4,14 @@
     <FaultRules/>
     <Flows>
         <Flow name="customers">
+            <!--Process request for /customers -->
             <Description>Get a specific customer by Id</Description>
             <Request>
+              <!--Extract Customer Id from the request uri-->
               <Step>
                    <Name>EV-Extract-CustomerId</Name>
               </Step>
+              <!--Check whether it matches the customer Id in the access token -->
               <Step>
                    <Name>RF-CustomerId-does-not-match</Name>
                    <Condition>(accesstoken.customerId != urirequest.customerId)</Condition>
@@ -18,6 +21,7 @@
             <Condition>(proxy.pathsuffix MatchesPath "/customers/{customerId}") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="UnknownResource">
+            <!--Raise fault if incoming request path is unexpected -->
             <Description>To handle all unknown resource paths</Description>
             <Request>
               <Step>
@@ -34,10 +38,18 @@
     <PreFlow name="PreFlow">
         <Request>
           <Step>
+              <!--Traffic Mngt - Throttling -->
               <Name>SA-Prevent-Spikes</Name>
           </Step>
             <Step>
-                <Name>OA2-Verify-Oauth-Token</Name>
+              <!--Security - Verify Access token -->
+              <Name>OA2-Verify-Oauth-Token</Name>
+            </Step>
+            <Step>
+                <!--Security - Verify Client Id attached to the token matches the client id being sent in the request header -->
+                <!--Note - This step might note be required. Read documentation for b03-check-client-id for more details -->
+                 <Name>RF-ClientId-does-not-match</Name>
+                 <Condition>(client_id != request.header.clientId)</Condition>
             </Step>
         </Request>
         <Response/>
